@@ -13,6 +13,10 @@
 #include <cstring>
 #include <unordered_map>
 
+#ifndef ENGINE_DIR
+#define ENGINE_DIR ""
+#endif
+
 namespace std {
 template <>
 struct hash<lve::LveModel::Vertex> {
@@ -35,13 +39,12 @@ LveModel::LveModel(LveDevice &device, const LveModel::Builder &builder) : lveDev
   createIndexBuffers(builder.indices);
 }
 
-LveModel::~LveModel() {
+LveModel::~LveModel() {}
 
-}
-
-std::unique_ptr<LveModel> LveModel::createModelFromFile(LveDevice &device, const std::string &filepath) {
+std::unique_ptr<LveModel> LveModel::createModelFromFile(
+    LveDevice &device, const std::string &filepath) {
   Builder builder{};
-  builder.loadModel(filepath);
+  builder.loadModel(ENGINE_DIR + filepath);
   return std::make_unique<LveModel>(device, builder);
 }
 
@@ -142,7 +145,6 @@ std::vector<VkVertexInputAttributeDescription> LveModel::Vertex::getAttributeDes
 }
 
 void LveModel::Builder::loadModel(const std::string &filepath) {
-
   tinyobj::attrib_t attrib;
   std::vector<tinyobj::shape_t> shapes;
   std::vector<tinyobj::material_t> materials;

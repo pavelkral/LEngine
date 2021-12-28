@@ -13,7 +13,6 @@
 #include <vector>
 
 namespace lve {
-
 class LveModel {
  public:
   struct Vertex {

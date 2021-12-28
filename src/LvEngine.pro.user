@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.15.2, 2021-10-27T14:53:27. -->
+<!-- Written by QtCreator 4.15.2, 2021-12-28T11:18:40. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -116,20 +116,27 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
      </valuemap>
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.2">
-      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">false</value>
       <value type="QString" key="ProjectExplorer.ProcessStep.Arguments">%{sourceDir}\shaders\  %{buildDir}\shaders\*  /Y /I  </value>
       <value type="QString" key="ProjectExplorer.ProcessStep.Command">xcopy</value>
       <value type="QString" key="ProjectExplorer.ProcessStep.WorkingDirectory">%{buildDir}</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.ProcessStep</value>
      </valuemap>
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.3">
-      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">false</value>
       <value type="QString" key="ProjectExplorer.ProcessStep.Arguments">simple_shader.vert -o simple_shader.vert.spv</value>
       <value type="QString" key="ProjectExplorer.ProcessStep.Command">C:\VulkanSDK\1.2.182.0\Bin32\glslc.exe</value>
       <value type="QString" key="ProjectExplorer.ProcessStep.WorkingDirectory">C:\Users\Admin\work\cpp\__dev\vulkan\lve\LvEngine\build-LvEngine-Desktop\shaders</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.ProcessStep</value>
      </valuemap>
-     <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">4</value>
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.4">
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">false</value>
+      <value type="QString" key="ProjectExplorer.ProcessStep.Arguments">simple_shader.frag -o simple_shader.frag.spv</value>
+      <value type="QString" key="ProjectExplorer.ProcessStep.Command">C:\VulkanSDK\1.2.182.0\Bin32\glslc.exe</value>
+      <value type="QString" key="ProjectExplorer.ProcessStep.WorkingDirectory">C:\Users\Admin\work\cpp\__dev\vulkan\lve\LvEngine\build-LvEngine-Desktop\shaders</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.ProcessStep</value>
+     </valuemap>
+     <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">5</value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Build</value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Build</value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Build</value>

@@ -17,12 +17,11 @@ SOURCES += main.cpp \
     lve_pipeline.cpp \
     lve_renderer.cpp \
     lve_swap_chain.cpp \
-    lve_window.cpp \
-    simple_render_system.cpp
-          
-#LIBS += opengl32.lib
+    lve_window.cpp  \
+    systems/point_light_system.cpp \
+    systems/simple_render_system.cpp
+
 INCLUDEPATH += C:/VulkanSDK/1.2.182.0/Include \
-# install
 INCLUDEPATH += C:/Users/Admin/work/cpp/__dev/vulkan/lve/LvEngine/libs/include \
 INCLUDEPATH += C:/Users/Admin/work/cpp/lib/glfw64/include \
                C:/Users/Admin/work/cpp/lib/glm
@@ -49,12 +48,16 @@ HEADERS += \
     lve_renderer.hpp \
     lve_swap_chain.hpp \
     lve_utils.hpp \
-    lve_window.hpp \
-    simple_render_system.hpp
+    lve_window.hpp  \
+    systems/point_light_system.hpp \
+    systems/simple_render_system.hpp
+
 
 
 DISTFILES += \
     shaders/compile.sh \
+    shaders/point_light.frag \
+    shaders/point_light.vert \
     shaders/simple_shader.frag \
     shaders/simple_shader.vert
 
