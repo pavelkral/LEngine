@@ -12,23 +12,23 @@
 
 namespace lve {
 class PointLightSystem {
- public:
-  PointLightSystem(
-      LveDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout globalSetLayout);
-  ~PointLightSystem();
+public:
+    PointLightSystem(
+            LveDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout globalSetLayout);
+    ~PointLightSystem();
 
-  PointLightSystem(const PointLightSystem &) = delete;
-  PointLightSystem &operator=(const PointLightSystem &) = delete;
+    PointLightSystem(const PointLightSystem &) = delete;
+    PointLightSystem &operator=(const PointLightSystem &) = delete;
 
-  void render(FrameInfo &frameInfo);
+    void render(FrameInfo &frameInfo);
 
- private:
-  void createPipelineLayout(VkDescriptorSetLayout globalSetLayout);
-  void createPipeline(VkRenderPass renderPass);
+private:
+    void createPipelineLayout(VkDescriptorSetLayout globalSetLayout);
+    void createPipeline(VkRenderPass renderPass);
 
-  LveDevice &lveDevice;
+    LveDevice &lveDevice;
 
-  std::unique_ptr<LvePipeline> lvePipeline;
-  VkPipelineLayout pipelineLayout;
+    std::unique_ptr<LvePipeline> lvePipeline;
+    VkPipelineLayout pipelineLayout;
 };
 }  // namespace lve

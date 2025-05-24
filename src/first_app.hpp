@@ -27,7 +27,7 @@ class FirstApp {
  private:
   void loadGameObjects();
 
-  LveWindow lveWindow{WIDTH, HEIGHT, "Vulkan Tutorial"};
+  LveWindow lveWindow{WIDTH, HEIGHT, "LVEengine"};
   LveDevice lveDevice{lveWindow};
   LveRenderer lveRenderer{lveWindow, lveDevice};
 

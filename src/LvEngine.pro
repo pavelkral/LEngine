@@ -22,13 +22,13 @@ SOURCES += main.cpp \
     systems/simple_render_system.cpp
 
 INCLUDEPATH += C:/VulkanSDK/1.2.182.0/Include \
-INCLUDEPATH += C:/Users/Admin/work/cpp/__dev/vulkan/lve/LvEngine/libs/include \
-INCLUDEPATH += C:/Users/Admin/work/cpp/lib/glfw64/include \
-               C:/Users/Admin/work/cpp/lib/glm
+INCLUDEPATH += C:/Users/Admin/work/cpp/api/vulkan/lve/LvEngine/libs/include \
+INCLUDEPATH += C:/Lib/glfw64/include \
+               C:/Lib/glm
 
 
-LIBS += -L"C:/Users/Admin/work/cpp/lib/glfw64/lib-vc2015/" -lglfw3dll
-LIBS += -L"C:VulkanSDK/1.2.182.0/Lib/" -lvulkan-1
+LIBS += -L"C:/Lib/glfw64/lib-vc2015/" -lglfw3dll
+LIBS += -L"C:/VulkanSDK/1.2.182.0/Lib/" -lvulkan-1
 
 
 LIBS += -lopengl32

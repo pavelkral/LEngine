@@ -13,10 +13,10 @@
 #include <glm/gtc/constants.hpp>
 
 // std
-#include <array>
+//#include <array>
 #include <cassert>
 #include <chrono>
-#include <stdexcept>
+//#include <stdexcept>
 
 namespace lve {
 
@@ -79,6 +79,7 @@ void FirstApp::run() {
     KeyboardMovementController cameraController{};
 
     auto currentTime = std::chrono::high_resolution_clock::now();
+
     while (!lveWindow.shouldClose()) {
         glfwPollEvents();
 
@@ -104,7 +105,7 @@ void FirstApp::run() {
                         gameObjects};
 
             // update
-            GlobalUbo ubo{};
+            GlobalUbo ubo;
             ubo.projection = camera.getProjection();
             ubo.view = camera.getView();
             uboBuffers[frameIndex]->writeToBuffer(&ubo);
@@ -123,8 +124,7 @@ void FirstApp::run() {
 }
 
 void FirstApp::loadGameObjects() {
-    std::shared_ptr<LveModel> lveModel =
-            LveModel::createModelFromFile(lveDevice, "models/flat_vase.obj");
+    std::shared_ptr<LveModel> lveModel = LveModel::createModelFromFile(lveDevice, "models/flat_vase.obj");
     auto flatVase = LveGameObject::createGameObject();
     flatVase.model = lveModel;
     flatVase.transform.translation = {-.5f, .5f, 0.f};
