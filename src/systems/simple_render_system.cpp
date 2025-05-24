@@ -7,7 +7,7 @@
 #include <glm/gtc/constants.hpp>
 
 // std
-#include <array>
+//#include <array>
 #include <cassert>
 #include <stdexcept>
 

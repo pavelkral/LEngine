@@ -21,20 +21,8 @@ SOURCES += main.cpp \
     systems/point_light_system.cpp \
     systems/simple_render_system.cpp
 
-INCLUDEPATH += C:/VulkanSDK/1.2.182.0/Include \
-INCLUDEPATH += C:/Users/Admin/work/cpp/api/vulkan/lve/LvEngine/libs/include \
-INCLUDEPATH += C:/Lib/glfw64/include \
-               C:/Lib/glm
-
-
-LIBS += -L"C:/Lib/glfw64/lib-vc2015/" -lglfw3dll
-LIBS += -L"C:/VulkanSDK/1.2.182.0/Lib/" -lvulkan-1
-
-
-LIBS += -lopengl32
-LIBS += -lglu32
-
 HEADERS += \
+    external/tinyobjloader/tiny_obj_loader.h \
     first_app.hpp \
     keyboard_movement_controller.hpp \
     lve_buffer.hpp \
@@ -52,15 +40,52 @@ HEADERS += \
     systems/point_light_system.hpp \
     systems/simple_render_system.hpp
 
-
-
 DISTFILES += \
-    shaders/compile.sh \
+    ../.gitignore \
+    ../LICENSE \
+    ../README.md \
+    shaders/compile-shaders.sh \
     shaders/point_light.frag \
     shaders/point_light.vert \
     shaders/simple_shader.frag \
     shaders/simple_shader.vert
 
+# Windows
+win32 {
+    message("Windows")
+    INCLUDEPATH += C:/VulkanSDK/1.2.182.0/Include \
+                   C:/Users/Admin/work/cpp/api/vulkan/lve/LvEngine/libs/include \
+                   C:/Lib/glfw64/include \
+                   C:/Lib/glm
 
+    LIBS += -L"C:/Lib/glfw64/lib-vc2015/" -lglfw3dll
+    LIBS += -L"C:/VulkanSDK/1.2.182.0/Lib/" -lvulkan-1
+    LIBS += -lopengl32
+    LIBS += -lglu32
+}
 
+#  Linux
+unix {
+    message("Unix/Linux")
+
+    # INCLUDEPATH += /usr/include/vulkan
+    # INCLUDEPATH += /usr/include/GLFW
+    # INCLUDEPATH += /usr/include/glm
+
+    #  pkg-config
+    # CONFIG += link_pkgconfig
+    # PKGCONFIG += vulkan glfw3 glm
+
+    # not pkg
+    # LIBS += -L/usr/lib/x86_64-linux-gnu -lvulkan
+    # LIBS += -L/usr/lib/x86_64-linux-gnu -lglfw
+    # LIBS += -lGL # OpenGL
+    # LIBS += -lGLU # GLU
+
+    LIBS += -lvulkan
+    LIBS += -lglfw
+    LIBS += -lGL
+    LIBS += -lGLU
+
+}
 

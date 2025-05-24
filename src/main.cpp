@@ -4,7 +4,7 @@
 // std
 #include <cstdlib>
 #include <iostream>
-#include <stdexcept>
+//#include <stdexcept>
 
 int main() {
   lve::FirstApp app{};
